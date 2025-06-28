@@ -1,0 +1,28 @@
+class MyException extends Exception
+{
+	public MyException(String s)
+	{
+		super(s);
+	}
+}
+public class UserAccount {
+void check(int amt,int bal) throws MyException
+{
+	if(amt>bal)
+		throw new MyException("insuffiecient funds");
+	else
+		System.out.println("sufficient funds");
+}
+public static void main(String [] args)
+{
+	UserAccount u=new UserAccount();
+	try
+	{
+		u.check(3000,1500);
+	}catch(MyException e)
+	{
+		System.out.println("exception caught");
+		System.out.println(e.getMessage());
+	}
+}
+}
