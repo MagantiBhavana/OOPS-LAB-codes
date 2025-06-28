@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+public class UnboxingBoxing {
+public static void main(String [] args)
+{
+	Object o=new Object();
+	//boxing
+	char ch='a';
+	Character c=ch;
+	System.out.println(c);
+	boolean b=true;
+	Boolean a=b;
+	System.out.println(a);
+	//Unboxing
+	Integer d=12;
+	int e=d;
+	System.out.println(e);
+	Float f=12.45f;
+	float g=f;
+	System.out.println(g);
+	Double h=12.45d;
+	double i=h;
+	System.out.println(i);
+	
+}
+}
