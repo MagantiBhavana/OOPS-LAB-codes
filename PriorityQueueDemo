@@ -1,0 +1,18 @@
+import java.util.PriorityQueue;
+public class PriorityQueueDemo {
+public static void main(String [] args)
+{
+	PriorityQueue<String>p=new PriorityQueue<>();
+	p.add("apple");
+	p.add("banana");
+	p.add("mango");
+	p.add("orange");
+	String e=p.poll();
+	System.out.println("removed element is"+e);
+	System.out.println("remaining elements are");
+	for (String b:p)
+	{
+		System.out.println(b);
+	}
+}
+}
