@@ -1,0 +1,41 @@
+import java.io.*;
+public class RAFExample {
+public static void main(String [] args)
+{
+	String filename="File2.txt";
+	try {
+		writeData(filename,"hello world");
+		String readData=readData(filename);
+		System.out.println("readData:"+readData);
+		updateData(filename,"Updated data:");
+		readData=readData(filename);
+		System.out.println("updateData:"+readData);
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+}
+private static void writeData(String filename,String data)throws IOException
+{
+	try(RandomAccessFile raf=new RandomAccessFile(filename,"rw"))
+	{
+		raf.writeUTF(data);
+	}
+}
+private static String readData(String filename) throws IOException
+{
+	try(RandomAccessFile raf=new RandomAccessFile(filename,"r"))
+	{
+		return raf.readUTF();
+	}
+}
+private static void updateData(String filename,String newdata)throws IOException
+{
+	try(RandomAccessFile raf=new RandomAccessFile(filename,"rw"))
+	{
+		raf.seek(0);
+		raf.writeUTF(newdata);
+	}
+}
+}
