@@ -1,0 +1,13 @@
+import java.util.*;
+public class TreeMapDemo {
+public static void main(String []args)
+{
+	TreeMap<String,Integer> t=new TreeMap<>();
+	t.put("apple", 10);
+	t.put("banana", 30);
+	t.put("mango", 20);
+	t.put("orange", 50);
+	Integer v=t.get("mango");
+	System.out.println("the value associated with mango is"+v);
+}
+}
