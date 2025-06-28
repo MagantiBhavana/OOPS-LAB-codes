@@ -1,0 +1,88 @@
+import java.util.Scanner;
+class Person
+{
+	int id;
+	String name,address,dept;
+	long phoneno;
+	Person(int i,String n,String addr,String d,long phno)
+	{
+		id=i;
+		name=n;
+		address=addr;
+		dept=d;
+		phoneno=phno;
+	}
+	void show()
+	{
+		System.out.println("person details are:"+id+" "+name+" "+address+" "+dept+" "+phoneno);
+	}
+}
+class Students extends Person
+{
+	float res;
+	String sem;
+	Students(int idno,String na,String ad,String dep,long ph,float r,String se)
+	{
+		super(idno,na,ad,dep,ph);
+		res=r;
+		sem=se;
+	}
+	void display1()
+	{
+		System.out.println("student details are"+id+" "+name+" "+address+" "+dept+" "+phoneno+" "+res+" "+sem);
+	}
+}
+class Teacher extends Person
+{
+	String design,speci;
+	int experi;
+	Teacher(int idn,String nam,String add,String de,long phono,String de,String sp,int e)
+	{
+		super(idn,nam,add,de,phono);
+		design=de;
+		speci=sp;
+		experi=e;		
+	}
+	void display2()
+	{
+		System.out.println("details of teacher are:"+id+" "+name+" "+address+" "+dept+" "+phoneno+" "+design+" "+speci+" "+experi);
+	}
+}
+public class TeacherStudent {
+public static void main(String [] args)
+{
+	Scanner s=new Scanner(System.in);
+	System.out.println("enter id:");
+	int id=s.nextInt();
+	System.out.println("enter name:");
+	String name=s.next();
+	System.out.println("enter address:");
+	String address=s.next();
+	System.out.println("enter department:");
+	String dept=s.next();
+	System.out.println("enter phonenumber:");
+	long phoneno=s.nextLong();
+	System.out.println("select 1:student 2:teacher");
+	int choice =s.nextInt();
+	switch(choice)
+	{
+	case 1:System.out.println("enter result:");
+            float res=s.nextFloat();
+		    System.out.println("enter sem:");
+	       String sem=s.next();
+	       Students st=new Students(id,name,address,dept,phoneno,res,sem);
+	       st.display1();
+	       break;
+	case 2:System.out.println("enter designation:");
+	       String design=s.next();
+	       System.out.println("enter specilisation:");
+	       String speci=s.next();
+	       System.out.println("enter experience:");
+	       int experi=s.nextInt();
+	       Teacher t=new Teacher(id,name,address,dept,phoneno,design,speci,experi);
+	       t.display2();
+	       break;
+	 default:System.out.println("invalid choice");
+	}
+}
+}
