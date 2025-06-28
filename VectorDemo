@@ -1,0 +1,13 @@
+import java.util.*;
+public class VectorDemo {
+public static void main(String [] args)
+{
+	Vector<String> vec=new Vector<String>();
+	vec.add("geeks");
+	vec.add("for");
+	vec.add("geeks");
+	vec.add("10");
+	System.out.println("contents of vector are"+vec);
+	System.out.println(vec.get(2));
+}
+}
