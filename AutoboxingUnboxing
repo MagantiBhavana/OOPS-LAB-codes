@@ -1,0 +1,14 @@
+import java.io.*;
+public class AutoboxingUnboxing {
+public static void main(String [] args)
+{
+	Object ob=new Object();
+	//autoboxing
+	char ch='a';
+	Character c=ch;
+	System.out.println(c);
+	boolean e=true;
+	Boolean v=e;
+	System.out.println(v);
+}
+}
