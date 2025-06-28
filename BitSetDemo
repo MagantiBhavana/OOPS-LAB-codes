@@ -1,0 +1,32 @@
+import java.util.BitSet;
+public class BitSetDemo {
+public static void main(String [] args)
+{
+	int n=8;
+	BitSet p=new BitSet(n);
+	for(int i=0;i<n;i++)
+		p.set(i);
+	System.out.print("\nbits of p are set as:");
+	for(int i=0;i<n;i++)
+		System.out.print(p.get(i)+" ");
+	BitSet q=(BitSet)p.clone();
+	System.out.print("\nbits of q are set as:");
+	for(int i=0;i<n;i++)
+		System.out.print(q.get(i)+" ");
+	for(int i=0;i<3;i++)
+		p.clear();
+	System.out.print("\nnbits of p are:");
+	for(int i=0;i<n;i++)
+		System.out.print(p.get(i)+" ");
+	System.out.print("\nthe true values of p are:"+p);
+	System.out.print("\nthe true values of q are:"+q);
+	BitSet r=(BitSet)p.clone();
+	p.and(q);
+	System.out.println("\nthe values of p and q is:"+p);
+	p.or(q);
+	System.out.println("the value of p or q is:"+p);
+	p.xor(q);
+	System.out.println("the value of p xor q is"+p);
+
+}
+}
