@@ -1,0 +1,33 @@
+import java.util.*;
+public class MatrixMul {
+public static void main(String [] args)
+{
+	int s=3;
+	int [][]a,b,c;
+	a=new int[s][s];
+	b=new int[s][s];
+	c=new int[s][s];
+	Scanner sc=new Scanner(System.in);
+	System.out.println(" enter First matrix:");
+	for(int i=0;i<s;i++)
+		for(int j=0;j<s;j++)
+			a[i][j]=sc.nextInt();
+	System.out.println("enter second matrix:");
+	for(int i=0;i<s;i++)
+		for(int j=0;j<s;j++)
+			b[i][j]=sc.nextInt();
+	for(int i=0;i<s;i++)
+		for(int j=0;j<s;j++)
+		{
+			c[i][j]=0;
+			for(int k=0;k<s;k++)
+				c[i][j]+=a[i][k]*b[k][j];
+		}
+	for(int i=0;i<s;i++)
+	{
+		for(int j=0;j<s;j++)
+			System.out.print(c[i][j]+" ");
+	        System.out.print("\n");
+}
+}
+}
