@@ -1,0 +1,23 @@
+import java.util.*;
+public class QuadraticEq {
+public static void main(String [] arg)
+{
+	Scanner s=new Scanner(System.in);
+	int a=s.nextInt();
+	int b=s.nextInt();
+	int c=s.nextInt();
+	int d=b*b-4*a*c;
+	if (d > 0) {
+        System.out.println("Roots are real");
+        System.out.println((-b - Math.pow(d, 0.5)) / (2 * a));
+        System.out.println((-b + Math.pow(d, 0.5)) / (2 * a));
+    } else if (d == 0) {
+        System.out.println("Roots are equal");
+        System.out.println(-b / (2.0 * a));
+    } else {
+        System.out.println("Roots are imaginary");
+        System.out.println((-b / (2.0 * a)) + " + i" + (Math.pow(-d, 0.5) / (2.0 * a)));
+        System.out.println((-b / (2.0 * a)) + " - i" + (Math.pow(-d, 0.5) / (2.0 * a)));
+    }
+}
+}
