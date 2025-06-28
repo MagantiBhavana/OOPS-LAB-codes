@@ -1,0 +1,28 @@
+class EmployeeException extends Exception
+{
+	public EmployeeException(String s)
+	{
+		super(s);
+	}
+}
+public class UserDefinedException {
+void empIdcheck(int empid) throws EmployeeException
+{
+	if(empid<=0||empid>999)
+	{
+		throw new EmployeeException("invalid employeeid");
+	}
+}
+public static void main(String [] args)
+{
+	UserDefinedException u=new UserDefinedException();
+	try
+	{
+		u.empIdcheck(0);
+	}catch(EmployeeException e)
+	{
+		System.out.println("exception caught");
+		System.out.println(e.getMessage());
+	}
+}
+}
