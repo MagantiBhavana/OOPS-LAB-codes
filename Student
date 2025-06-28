@@ -1,0 +1,64 @@
+import java.util.Scanner;
+class Marks
+{
+	String name;
+	int rollno;
+	String branch;
+	int s1,s2,s3,s4,s5;
+	float per;
+	String grade;
+	Marks(String n,int rno,String br,int a,int b,int c,int d,int e)
+	{
+		name=n;
+		rollno=rno;
+		branch=br;
+		s1=a;
+		s2=b;
+		s3=c;
+		s4=d;
+		s5=e;
+	}
+	void perc()
+	{
+		per=(s1+s2+s3+s4+s5)/5;
+		System.out.println("percentage is"+per);
+	}
+	void grade()
+	{
+		if(per>70)
+			System.out.println("distinction");
+		else if(per>60&&per<70)
+			System.out.println("first class");
+		else if(per>50&&per<60)
+			System.out.println("second class");
+		else if(per>40&&per<50)
+				System.out.println("third class");
+		else 
+			System.out.println("fail");
+	}
+}
+public class Student {
+public static void main(String [] args)
+{
+	Scanner s=new Scanner(System.in);
+	System.out.println("enter name:");
+	String name=s.next();
+	System.out.println("enter rollno:");
+	int rollno=s.nextInt();
+	System.out.println("enter branch:");
+	String branch=s.next();
+	System.out.println("enter subject marks:");
+	int s1=s.nextInt();
+	int s2=s.nextInt();
+	int s3=s.nextInt();
+	int s4=s.nextInt();
+	int s5=s.nextInt();
+	Marks m=new Marks(name,rollno,branch,s1,s2,s3,s4,s5);
+	System.out.println("name:"+name);
+	System.out.println("rollno:"+rollno);
+	System.out.println("branch:"+branch);
+	System.out.println("enter 5 subjects marks:"+s1+" "+s2+" "+s3+" "+s4+" "+s5);
+	m.perc();
+	m.grade();
+}
+}
