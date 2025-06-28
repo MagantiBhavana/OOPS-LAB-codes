@@ -1,0 +1,31 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+public class FilesERWL {
+	public static void main(String [] args)
+	{
+	try
+	{
+		Scanner s=new Scanner(System.in);
+		String s1=s.nextLine();
+		File o=new File(s1);
+		if(o.exists())
+			System.out.println("file exists");
+		else
+			System.out.println("file does not exists");
+		if(o.canWrite())
+			System.out.println("file is writable");
+		else
+			System.out.println("file is not writable");
+		if(o.canRead())
+			System.out.println("file is readable");
+		else
+			System.out.println("file is not readable");
+		System.out.println("length of file in bytes:"+o.length());
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	}
+}
