@@ -1,0 +1,90 @@
+import java.util.*;
+import java.io.*;
+public class Employee implements Serializable
+{
+	public static final long serialversionUID=1L;
+	private String name;
+	private Date dob;
+	private String department;
+	private double salary;
+public Employee() {
+}
+public Employee(String name,Date dob,String department,double salary)
+{
+	this.name=name;
+	this.dob=dob;
+	this.department=department;
+	this.salary=salary;
+}
+public String getName()
+{
+	return(name);
+}
+public void setName(String name)
+{
+	this.name=name;
+}
+public Date getDob()
+{
+	return(dob);
+}
+public void setDob(Date dob)
+{
+	this.dob=dob;
+}
+public String getDepartment()
+{
+	return(department);
+}
+public void setDepartment(String department)
+{
+	this.department=department;
+}
+public double getSalary()
+{
+	return(salary);
+}
+public void setSalary(double salary)
+{
+	this.salary=salary;
+}
+public static void main(String [] args)
+{
+	Employee employee=new Employee("dev",new Date(),"IT",50000);
+	serializedEmployee(employee,"data");
+	Employee deserializedEmployee=deserializedEmployee("data");
+	if(deserializedEmployee!=null)
+	{
+		System.out.println("deserialized employee");
+		System.out.println("Name:"+deserializedEmployee.getName());
+		System.out.println("salary:"+deserializedEmployee.getSalary());
+	}
+}
+private static void serializedEmployee(Employee employee,String filename)
+{
+	try(ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream(filename)))
+	{
+		oos.writeObject(employee);
+		System.out.println("employee object is serialized and saved to " + filename);
+	}
+	catch(IOException e)
+	{
+		e.printStackTrace();
+	}
+}
+private static Employee deserializedEmployee(String filename)
+{
+	try(ObjectInputStream ois=new ObjectInputStream(new FileInputStream(filename)))
+	{
+		Object obj=ois.readObject();
+		if(obj instanceof Employee) {
+		System.out.println("employee object desrialized from"+filename);
+		return(Employee) obj;
+		}
+	}catch(IOException | ClassNotFoundException e)
+	{
+		e.printStackTrace();
+	}
+	return null;
+}
+}
