@@ -1,0 +1,28 @@
+import java.util.*;
+import java.util.Scanner;
+interface Converter
+{
+	float dlr (float x);
+	float euro(float x);
+}
+class Money implements Converter
+{
+	public float dlr(float x)
+	{
+		return(x*85);
+	}
+	public float euro(float x)
+	{
+		return(x*105);
+	}
+}
+public class CurrencyConverter {
+public static void main(String [] args)
+{
+	Scanner s=new Scanner(System.in);
+	Money m=new Money();
+	float x=s.nextFloat();
+	System.out.println("dlr to rupees"+m.dlr(x));
+	System.out.println("euro to rupees"+m.euro(x));
+}
+}
